@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Hero + title/meta: new trust line, live Nov 8, 2026 (Michelle's pick: new hero now). -->
+<title>Missed Calls Become Booked Appointments | Kelpie Group</title>
+<meta name="description" content="Kelpie Group turns missed calls into booked appointments for salon and day spa owners, counted in your own booking system. Book a free 30-minute audit.">
+<link rel="canonical" href="https://www.kelpiegroup.net/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Missed Calls Become Booked Appointments | Kelpie Group">
+<meta property="og:description" content="Kelpie Group turns missed calls into booked appointments for salon and day spa owners, counted in your own booking system. Book a free 30-minute audit.">
+<meta property="og:url" content="https://www.kelpiegroup.net/">
+<meta property="og:image" content="https://www.kelpiegroup.net/kelpie-share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B1E28">
+<link rel="icon" type="image/png" sizes="32x32" href="kelpie-favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="kelpie-favicon-192.png">
+<link rel="apple-touch-icon" href="kelpie-favicon-180.png">
+<!-- JSON-LD schema — added Nov 8, 2026 (Q&A + schema cleanup). Facts match the page text. Telephone cut (no phone on the page — her tap). Certifications cut from the founder description (no issuers on file — add back when issuers are confirmed). "AI Advisor" job title cut (not in the profile sheet — her call). Service areas are the draft list from the punch list (her call to confirm/cut/add). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Kelpie Group",
+  "url": "https://www.kelpiegroup.net/",
+  "email": "michelle@kelpiegroup.net",
+  "founder": {
+    "@type": "Person",
+    "name": "Michelle Butts",
+    "description": "Retired special education and technology teacher."
+  },
+  "description": "Practical AI help for small business owners. Missed calls become booked appointments, counted in your own booking system, built on tools I own and you control, and never run without your approval.",
+  "areaServed": ["Hinesville, GA", "Ludowici, GA", "Richmond Hill, GA", "Jesup, GA", "Savannah, GA"],
+  "serviceType": ["Free 30-Minute Workflow Audit", "1-on-1 AI Power Session", "Done-for-you booking engine", "AI Automations and Apps"],
+  "priceRange": "$97 per Power Session; other services quoted after a free Workflow Audit"
+}
+</script>
+<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<!-- Fonts cut Nov 7, 2026 (MichelleOS first check): five Google families → two (Plus Jakarta Sans + Cinzel). Montserrat, Sora, and JetBrains Mono now fall back to system fonts. Only call it fixed after a Lighthouse run shows it. -->
+<style>
+/* Layout: one deep-water column; each page is a dive, section labels read like a depth gauge. Single committed dark theme. */
+:root{
+  --abyss:#06111A;      /* page ground */
+  --deep:#0B1E28;       /* raised bands */
+  --kelp:#123544;       /* card surface */
+  --glow:#22D3EE;       /* cyber cyan accent */
+  --sun:#F5B544;        /* amber: the one action color */
+  --gold:#E9C97E;       /* artwork gold: brand line only */
+  --serif:"Cinzel","Trajan Pro",Georgia,serif;
+  --caps:"Plus Jakarta Sans",system-ui,sans-serif;
+  --foam:#E6F4F7;       /* main text */
+  --mist:#9DB8C2;       /* secondary text */
+  --line:rgba(34,211,238,.22);
+  --display:"Plus Jakarta Sans",system-ui,sans-serif;
+  --body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--abyss);color:var(--foam);font-family:var(--body);font-size:16px;line-height:1.65;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--deep)}
+a{color:var(--glow)}
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0;color:#fff}
+h1{font-size:clamp(2.1rem,5.2vw,3.6rem);font-weight:700;letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:700;letter-spacing:-.015em}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0}
+.lede{font-size:1.15rem;color:var(--mist);max-width:60ch}
+.depth{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--glow);display:flex;align-items:center;gap:10px}
+.depth::before{content:"";width:28px;height:1px;background:var(--glow);opacity:.7}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(11,30,40,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:8px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.brand .emblem{width:52px;height:52px;flex:none;filter:brightness(1.25) saturate(1.1) drop-shadow(0 0 10px rgba(34,211,238,.3))}
+.brand b{font-family:var(--serif);font-weight:600;font-size:1.15rem;letter-spacing:.12em;display:block;line-height:1.1;color:#fff}
+.brand small{font-family:var(--caps);font-weight:500;font-size:.62rem;letter-spacing:.32em;color:var(--glow);text-transform:uppercase}
+.foot-brand{display:flex;align-items:center;gap:12px}
+.foot-brand img{width:40px;height:40px}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{color:var(--mist);text-decoration:none;font-weight:600;font-size:.92rem;padding:8px 12px;border-radius:8px}
+nav a:hover{color:#fff}
+nav a[aria-current="page"]{color:#fff;background:rgba(34,211,238,.12)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:8px;padding:8px 12px;font:600 .9rem var(--body)}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--deep);flex-direction:column;padding:8px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line)}
+  nav.open{display:flex}
+  .bar .btn-sun{display:none}
+}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 1rem var(--body);padding:13px 22px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn-sun{background:var(--sun);color:#1A1205}
+.btn-sun:hover{box-shadow:0 0 0 4px rgba(245,181,68,.25)}
+.btn-ghost{color:#fff;border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--glow)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(900px 420px at 75% -10%,rgba(34,211,238,.20),transparent 60%),
+  linear-gradient(180deg,#0E2A38 0%,var(--abyss) 100%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-block:72px 88px}
+.hero .copy{display:grid;gap:22px;min-width:0}
+.hero-art{position:relative;max-width:420px;width:100%;justify-self:center}
+.hero-art svg{width:100%;height:auto;display:block}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:48px 64px}.hero-art{max-width:260px;order:-1}}
+.bubbles{position:absolute;inset:0;z-index:1;pointer-events:none}
+.bubbles span{position:absolute;bottom:-20px;border-radius:50%;border:1px solid rgba(230,244,247,.35);background:rgba(230,244,247,.06);animation:rise linear infinite}
+@keyframes rise{to{transform:translate(var(--dx,10px),-110vh)}}
+.kelp-floor{position:absolute;left:0;right:0;bottom:0;height:90px;z-index:1;opacity:.55}
+.sub-hero .wrap{grid-template-columns:1fr;padding-block:56px 64px}
+.sub-hero .lede{max-width:62ch}
+
+/* sections */
+section.band{padding-block:72px}
+section.band.alt{background:var(--deep);border-block:1px solid var(--line)}
+.stack{display:grid;gap:14px}
+.head{display:grid;gap:12px;margin-bottom:36px;max-width:720px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:860px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:var(--kelp);border:1px solid var(--line);border-radius:14px;padding:26px;display:grid;gap:12px;align-content:start;min-width:0}
+.card p{color:var(--mist)}
+.tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sun)}
+ul.ticks{list-style:none;padding:0;margin:0;display:grid;gap:8px;color:var(--foam)}
+ul.ticks li{padding-left:26px;position:relative}
+ul.ticks li::before{content:"";position:absolute;left:2px;top:.55em;width:10px;height:10px;border-radius:50%;border:2px solid var(--glow)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:s}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+.step{border-top:2px solid var(--glow);padding-top:18px;display:grid;gap:8px;align-content:start}
+.step b{font-family:var(--mono);color:var(--glow);font-size:.8rem;letter-spacing:.1em}
+.step p{color:var(--mist)}
+
+/* services */
+.svc{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:28px;padding:30px;border:1px solid var(--line);border-radius:16px;background:var(--kelp)}
+.svc + .svc{margin-top:20px}
+.svc .copy{display:grid;gap:12px;min-width:0}
+.svc .copy > p{color:var(--mist)}
+.price{border-left:1px solid var(--line);padding-left:24px;display:grid;gap:10px;align-content:center}
+.price strong{font-family:var(--display);font-size:2rem;color:#fff;font-variant-numeric:tabular-nums;line-height:1}
+.price span{color:var(--mist);font-size:.9rem}
+@media (max-width:760px){.svc{grid-template-columns:1fr}.price{border-left:0;border-top:1px solid var(--line);padding:18px 0 0}}
+
+/* quote + about */
+.lore{font-family:var(--serif);letter-spacing:.01em;font-size:clamp(1.25rem,2.4vw,1.6rem);line-height:1.4;color:#fff;border-left:3px solid var(--sun);padding-left:22px;max-width:44ch}
+.about{display:grid;grid-template-columns:280px minmax(0,1fr);gap:44px;align-items:start}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+.portrait{aspect-ratio:4/5;max-width:100%;border-radius:16px;border:1px solid var(--line);background:linear-gradient(160deg,#16465A,#0B1E28);display:grid;place-items:center;text-align:center;color:var(--mist);font-family:var(--mono);font-size:.75rem;padding:20px}
+.prose{display:grid;gap:16px;max-width:64ch}
+.prose p{color:var(--mist)}
+
+/* news */
+.post{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;padding-block:28px;border-top:1px solid var(--line)}
+.post:last-child{border-bottom:1px solid var(--line)}
+.post time{font-family:var(--mono);font-size:.78rem;color:var(--glow);letter-spacing:.08em}
+.post .stack p{color:var(--mist)}
+@media (max-width:700px){.post{grid-template-columns:1fr;gap:8px}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:28px}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+form{display:grid;gap:16px}
+label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+input,select,textarea{font:inherit;color:var(--foam);background:var(--abyss);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--glow);outline-offset:1px}
+.note{font-family:var(--mono);font-size:.75rem;color:var(--mist)}
+.ok{background:rgba(34,211,238,.1);border:1px solid var(--glow);border-radius:10px;padding:16px}
+dl{display:grid;gap:14px;margin:0}
+dt{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--glow)}
+dd{margin:0;color:#fff;overflow-wrap:anywhere}
+
+/* closing cta */
+.cta-band{background:linear-gradient(120deg,#0F3242,#0B1E28);border:1px solid var(--line);border-radius:20px;padding:44px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.cta-band .stack{max-width:560px}
+.cta-band p{color:var(--mist)}
+
+footer{border-top:1px solid var(--line);padding-block:32px;color:var(--mist);font-size:.88rem;background:#040C12}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+.page[hidden]{display:none!important}
+/* photo hero built around Michelle's cyber kelpie artwork */
+.hero-photo{background:var(--abyss);min-height:min(78vw,640px)}
+.hero-photo .hero-img{position:absolute;top:0;right:0;bottom:0;left:auto;height:100%;width:auto;max-width:none;z-index:0;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%);mask-image:linear-gradient(90deg,transparent 0%,#000 22%)}
+@media (min-width:761px) and (max-width:1100px){.hero-photo .hero-img{right:-18%}.hero-photo .wrap{grid-template-columns:minmax(0,440px)}}
+.hero-photo::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(6,17,26,.7) 0%,rgba(6,17,26,0) 45%),linear-gradient(0deg,rgba(6,17,26,.9) 0%,rgba(6,17,26,0) 25%)}
+.hero-photo .wrap{grid-template-columns:minmax(0,560px);padding-block:96px 104px}
+.hero-photo .copy{gap:26px}
+.tagline{display:grid;gap:10px;font-weight:400;letter-spacing:0}
+.tagline .t1{font:400 clamp(1.05rem,2.1vw,1.55rem)/1.2 var(--caps);letter-spacing:.22em;text-transform:uppercase;color:#fff}
+.tagline .t2{display:flex;align-items:center;gap:14px;font:500 clamp(.85rem,1.4vw,1.05rem)/1 var(--caps);letter-spacing:.32em;text-transform:uppercase;color:var(--glow);max-width:34ch}
+.tagline .t2::before,.tagline .t2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(34,211,238,.6),transparent)}
+.tagline .t3{font:600 clamp(1.9rem,4.6vw,3.3rem)/1.08 var(--serif);letter-spacing:.04em;text-transform:uppercase;background:linear-gradient(180deg,#F8E7B5,var(--gold) 60%,#C9A04E);-webkit-background-clip:text;background-clip:text;color:transparent;text-wrap:balance}
+@media (max-width:760px){
+  .hero-photo{min-height:0}
+  .hero-photo .hero-img{position:relative;right:auto;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:78% center;-webkit-mask-image:none;mask-image:none}
+  .hero-photo::after{background:linear-gradient(0deg,var(--abyss) 0%,rgba(6,17,26,0) 34%);height:calc(75vw);bottom:auto}
+  .hero-photo .wrap{padding-block:0 56px;margin-top:-56px}
+  .hero-photo .kelp-floor{display:none}
+}
+#p-home .band:nth-of-type(3){}
+
+@media (prefers-reduced-motion:reduce){.bubbles span{animation:none;display:none}.kelp-sway{animation:none!important}}
+.kelp-sway{transform-origin:bottom center;animation:sway 7s ease-in-out infinite alternate}
+@keyframes sway{from{transform:skewX(-3deg)}to{transform:skewX(3deg)}}
+.pulse{animation:pulse 3.2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="hide" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5EEAF5"/><stop offset=".55" stop-color="#1689A6"/><stop offset="1" stop-color="#0B3A4C"/>
+    </linearGradient>
+    <symbol id="kelpie" viewBox="0 0 200 200">
+      <!-- original cyber kelpie: water-horse head, circuit veins, kelp mane -->
+      <path d="M116 18 L128 44 C150 52 170 74 174 104 C178 132 176 160 180 190 L96 190 C102 166 100 146 90 130 C80 132 62 138 46 142 C30 146 20 136 23 123 C25 112 33 103 43 94 C58 76 78 56 98 42 L104 16 L112 34 Z" fill="url(#hide)" stroke="#9FF3FA" stroke-width="1.5" stroke-linejoin="round"/>
+      <g fill="none" stroke="#06111A" stroke-width="2.2" stroke-linecap="round" opacity=".55">
+        <path d="M52 120 H76 L90 106 H118"/><path d="M118 106 L138 86 H156"/><path d="M106 150 H140 L152 162"/><path d="M128 128 V176"/>
+      </g>
+      <g fill="#E6FBFD"><circle cx="118" cy="106" r="3.2"/><circle cx="156" cy="86" r="3.2"/><circle cx="152" cy="162" r="3.2"/><circle cx="128" cy="176" r="3.2"/><circle cx="52" cy="120" r="3.2"/></g>
+      <circle cx="86" cy="80" r="6.5" fill="#06111A"/><circle class="pulse" cx="86" cy="80" r="3.4" fill="#F5B544"/>
+      <circle cx="34" cy="126" r="2.4" fill="#06111A"/>
+      <g fill="none" stroke="#2DD4BF" stroke-width="5" stroke-linecap="round" opacity=".9">
+        <path d="M132 46 C150 40 160 52 168 46"/><path d="M152 64 C170 60 178 74 190 66"/><path d="M164 92 C180 90 186 104 196 98"/><path d="M170 122 C184 122 188 136 198 132"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#home" data-go="home" aria-label="Kelpie Group home">
+      <img class="emblem" src="kelpie-emblem-160.webp" alt="" width="52" height="52">
+      <span><b>KELPIE GROUP</b><small>Practical AI</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav id="mainNav" aria-label="Main">
+      <a href="#home" data-go="home">Home</a>
+      <a href="#services" data-go="services">Services</a>
+      <a href="#learn" data-go="learn">Learn</a>
+      <a href="#news" data-go="news">AI News</a>
+      <a href="#about" data-go="about">About</a>
+      <a href="#contact" data-go="contact">Contact</a>
+    </nav>
+    <a class="btn btn-sun" href="#contact" data-go="contact">Send a message</a>
+  </div>
+</header>
+
+<main>
+<!-- ============ HOME ============ -->
+<div class="page" id="p-home">
+  <div class="hero hero-photo">
+    <img class="hero-img" src="kelpie-hero.webp" alt="A glowing cyber kelpie, a water horse traced with lines of light, rising from dark water" width="1536" height="1024">
+    <div class="bubbles" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="copy">
+        <span class="depth">For salon and day spa owners</span>
+        <h1 class="tagline"><span class="t3">Missed calls become booked appointments.</span></h1>
+        <p class="lede">It answers the phone when your hands are busy, so the booking stays yours.</p>
+        <p class="lede">Counted in your own booking system, built on tools I own and you control, and never run without your approval.</p>
+        <p class="note">Built for 1–6 chairs or rooms and no full-time receptionist.</p>
+        <div class="btn-row">
+          <a class="btn btn-sun" href="https://calendar.app.google/PJZyF1Ht2vgJFSdE9" target="_blank" rel="noopener">Book the free 30-minute Workflow Audit</a>
+          <a class="btn btn-ghost" href="#services" data-go="services">See services</a>
+        </div>
+      </div>
+    </div>
+    <svg class="kelp-floor" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true"><g class="kelp-sway" fill="none" stroke="#1B6A62" stroke-width="6" stroke-linecap="round"><path d="M60 90 C50 60 80 40 64 0"/><path d="M180 90 C200 64 170 40 190 10"/><path d="M980 90 C970 60 1000 46 984 6"/><path d="M1100 90 C1120 66 1090 44 1112 14"/><path d="M1150 90 C1140 70 1160 54 1148 30"/></g></svg>
+  </div>
+
+  <section class="band" id="salons">
+    <div class="wrap">
+      <div class="head">
+        <span class="depth">Salons and Spas</span>
+        <h2>Your phone rings while your hands are busy. Miss it, and you lose the booking.</h2>
+        <p class="lede">Built for independent salon and day spa owners — 1 to 6 chairs or rooms, no full-time receptionist. Missed calls become booked appointments, counted in your own booking system, built on tools I own and you control, and never run without your approval.</p>
+      </div>
+      <div class="grid2">
+        <div class="card">
+          <span class="tag">Start here — free</span>
+          <h3>Free 30-Minute Workflow Audit</h3>
+          <p>Thirty minutes, Monday to Friday, 1 to 4 PM Eastern, on video. We count your missed calls together and map what AI can take off your plate — and you get the plan in plain English.</p>
+          <div class="btn-row"><a class="btn btn-sun" href="https://calendar.app.google/PJZyF1Ht2vgJFSdE9" target="_blank" rel="noopener">Book the free audit</a></div>
+        </div>
+        <div class="card">
+          <span class="tag">$97 per session</span>
+          <h3>1-on-1 AI Power Session</h3>
+          <p>Work on the thing you're stuck on, at your pace. Leave with a plan you can run yourself — plain English, no jargon.</p>
+          <div class="btn-row"><a class="btn btn-ghost" href="#services" data-go="services">See services</a></div>
+        </div>
+        <div class="card">
+          <span class="tag">The core — quoted after a free audit</span>
+          <h3>Done-for-you booking engine</h3>
+          <p>It answers when your hands are busy, takes the request, and gets it into your booking system — counted in your own system, and never run without your approval.</p>
+          <div class="btn-row"><a class="btn btn-sun" href="https://calendar.app.google/PJZyF1Ht2vgJFSdE9" target="_blank" rel="noopener">Start with the free audit</a></div>
+        </div>
+        <div class="card">
+          <span class="tag">Per project</span>
+          <h3>AI Automations and Apps</h3>
+          <p>Small tools that quietly do the busywork, built around how your business already runs — follow-up messages, intake forms, simple custom apps.</p>
+          <div class="btn-row"><a class="btn btn-ghost" href="#services" data-go="services">See services</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="head"><h2>Built for people who want results, not jargon</h2></div>
+      <div class="grid2">
+        <div class="card">
+          <span class="tag">Small business owners</span>
+          <h3>Get your time back</h3>
+          <p>You're running the whole show. We set up AI that handles the repeat work: follow-up messages, social posts, appointment reminders, and intake forms that land neatly in a spreadsheet.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Beginner AI learners</span>
+          <h3>Learn it and build it yourself</h3>
+          <p>Curious about AI but not sure where to start? Live, step-by-step lessons take you from your first prompt to your first working app. No tech background needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap">
+      <div class="head"><h2>Three steps from "where do I start?" to "it's working"</h2></div>
+      <div class="steps">
+        <div class="step"><b>STEP 1</b><h3>Tell me what's eating your time</h3><p>Fill out the short contact form. One or two sentences is plenty.</p></div>
+        <div class="step"><b>STEP 2</b><h3>Get a plan in plain English</h3><p>We talk it through on a free call and I map out what AI can take off your plate, with the cost up front.</p></div>
+        <div class="step"><b>STEP 3</b><h3>Use it with confidence</h3><p>You get a working tool and a walkthrough, so you know how to run it without me.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="grid2" style="align-items:center">
+        <div class="stack">
+          <h2>Taught by a teacher, built for real life</h2>
+          <ul class="ticks">
+            <li>Plain-English explanations from a retired special education and technology teacher</li>
+            <li>Free tools first, so you don't pile on subscriptions</li>
+            <li>You approve everything before it goes live</li>
+            <li>You own what we build, and you learn how it works</li>
+          </ul>
+        </div>
+        <p class="lore">In Scottish lore, the kelpie is a swift, powerful creature of the lochs. We take that swift power and make it work for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="ask">
+    <div class="wrap">
+      <div class="stack">
+        <h2>Ask Kelpie: coming soon</h2>
+        <p class="lede">Our AI assistant is coming soon. Send a message for now.</p>
+        <div class="btn-row"><a class="btn btn-sun" href="#contact" data-go="contact">Send a message</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="faq">
+    <div class="wrap">
+      <div class="head"><h2>Questions salon and spa owners ask</h2><p class="lede">The things owners ask before they book a free audit. If yours isn't here, send a message.</p></div>
+      <div class="stack">
+        <div class="card">
+          <h3>I keep missing calls while my hands are busy. What do you actually do about that?</h3>
+          <p>That's the whole job. I build you a booking engine that answers when you can't, takes the request, and gets it into your booking system, built on tools I own and you control — and nothing runs without your say-so. Missed calls become booked appointments, and you can count them in your own system. Start with a free 30-minute Workflow Audit and we'll count your missed calls together.</p>
+        </div>
+        <div class="card">
+          <h3>What does it cost?</h3>
+          <p>It depends on what you need, which is why it starts with a free 30-minute Workflow Audit. After that I quote you a price for the setup. The one fixed price: a 1-on-1 Power Session is $97. No hourly billing, no surprise subscriptions.</p>
+        </div>
+        <div class="card">
+          <h3>Do I have to buy new software?</h3>
+          <p>No. I build on tools I own and you control, and I work with the booking system you already use. If you need something new, I'll tell you plainly and you approve it first.</p>
+        </div>
+        <div class="card">
+          <h3>Will it message my clients or post without me checking?</h3>
+          <p>Never. You approve everything before it goes live. Drafts first, your tap, then it runs.</p>
+        </div>
+        <div class="card">
+          <h3>What happens on the free Workflow Audit?</h3>
+          <p>Thirty minutes, Monday to Friday, 1 to 4 PM Eastern, on video. We look at how your calls and bookings flow right now, I map what AI can take off your plate, and you get the plan in plain English. Book it here: <a href="https://calendar.app.google/PJZyF1Ht2vgJFSdE9">https://calendar.app.google/PJZyF1Ht2vgJFSdE9</a></p>
+        </div>
+        <div class="card">
+          <h3>I'm not techy. Do I have to learn a system?</h3>
+          <p>No. I'm a retired teacher — plain English, step by step, and a walkthrough so you can run it yourself. You own what we build.</p>
+        </div>
+        <div class="card">
+          <h3>Who are you?</h3>
+          <p>Michelle Butts, Kelpie Group. Retired special education and technology teacher. Four years doing this work, including the years I ran a day spa — Kelpie Group, the AI business, started in October 2026. I work online, serving small business owners.</p>
+        </div>
+        <div class="card">
+          <h3>What happens after the audit?</h3>
+          <p>You get a plan and a quote for the setup. If you want it built, I build it. If not, the audit is still yours. No pressure, no follow-up blitz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-band">
+        <div class="stack"><h2>Ready to see what AI can do for you?</h2><p>Send a quick message. You'll hear back within one to two business days.</p></div>
+        <a class="btn btn-sun" href="#contact" data-go="contact">Send a message</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<div class="page" id="p-services" hidden>
+  <div class="hero sub-hero"><div class="bubbles" aria-hidden="true"></div><div class="wrap"><div class="copy">
+    <span class="depth">Services</span>
+    <h1>Ways we can work together</h1>
+    <p class="lede">Pick the one that fits where you are today. Not sure? Send a message and we'll figure it out together on a free call.</p>
+  </div></div></div>
+
+  <section class="band"><div class="wrap">
+    <article class="svc">
+      <div class="copy">
+        <span class="tag">Hands-on help</span>
+        <h2>1 on 1 Power Session</h2>
+        <p>Personal coaching on the thing you're stuck on, at your pace.</p>
+        <ul class="ticks"><li>Content and email newsletter strategy</li><li>Booking and missed-call workflow</li><li>Follow-up workflow setup</li></ul>
+      </div>
+      <div class="price"><strong>$97</strong><span>per session</span><a class="btn btn-sun" href="#contact" data-go="contact">Book a session</a></div>
+    </article>
+
+    <article class="svc">
+      <div class="copy">
+        <span class="tag">Start here</span>
+        <h2>Free 30-Minute Workflow Audit</h2>
+        <p>Thirty minutes, Monday to Friday, 1 to 4 PM Eastern, on video. We look at how your calls and bookings flow right now, map what AI can take off your plate, and you get the plan in plain English.</p>
+        <ul class="ticks"><li>Count your missed calls together</li><li>A plan for what AI can take off your plate</li><li>No pressure, no follow-up blitz — the audit is yours either way</li></ul>
+      </div>
+      <div class="price"><strong>Free</strong><span>30 minutes, on video</span><a class="btn btn-sun" href="https://calendar.app.google/PJZyF1Ht2vgJFSdE9" target="_blank" rel="noopener">Book the free audit</a></div>
+    </article>
+
+    <article class="svc">
+      <div class="copy">
+        <span class="tag">The core</span>
+        <h2>Done-for-you booking engine</h2>
+        <p>It answers the phone when your hands are busy, takes the request, and gets it into the booking system you already use — counted in your own system, built on tools I own and you control, and never run without your approval.</p>
+        <ul class="ticks"><li>Answers when you can't, so the appointment doesn't walk out the door</li><li>Works inside the booking system you already use</li><li>Counted in your own system — recovered bookings, not guesses</li></ul>
+      </div>
+      <div class="price"><strong>Custom</strong><span>quoted after a free Workflow Audit</span><a class="btn btn-sun" href="https://calendar.app.google/PJZyF1Ht2vgJFSdE9" target="_blank" rel="noopener">Start with the free audit</a></div>
+    </article>
+
+    <article class="svc">
+      <div class="copy">
+        <span class="tag">Built for your business</span>
+        <h2>AI Automations and Apps</h2>
+        <p>Small tools that quietly do the busywork, built around how your business already runs.</p>
+        <ul class="ticks"><li>Lead and client follow-up messages</li><li>Contact and intake forms that drop into Google Sheets</li><li>Simple custom apps, with monthly support if you want it</li></ul>
+      </div>
+      <div class="price"><strong>Per project</strong><span>quoted after a free call</span><a class="btn btn-sun" href="#contact" data-go="contact">Tell me your idea</a></div>
+    </article>
+  </div></section>
+</div>
+
+<!-- ============ LEARN ============ -->
+<div class="page" id="p-learn" hidden>
+  <div class="hero sub-hero"><div class="bubbles" aria-hidden="true"></div><div class="wrap"><div class="copy">
+    <span class="depth">Learn</span>
+    <h1>Learn AI the way a good teacher would teach it</h1>
+    <p class="lede">Live workshops and courses for beginners. Everything works on the free versions of ChatGPT, Claude, or Gemini.</p>
+  </div></div></div>
+
+  <section class="band"><div class="wrap grid2">
+    <div class="card">
+      <span class="tag">Paid intensive · coming soon</span>
+      <h2>AI Power-Up: 4-Weekend Intensive</h2>
+      <p>A deeper dive into practical AI: custom workflows, client follow-up systems, and personal content setups you build alongside me over four weekends.</p>
+      <ul class="ticks"><li>Live sessions on Zoom</li><li>Build real tools for your own work</li><li>Small group, beginner friendly</li></ul>
+      <div class="btn-row"><a class="btn btn-ghost" href="#contact" data-go="contact">Join the waitlist</a></div>
+    </div>
+    <div class="card">
+      <span class="tag">Free live workshop</span>
+      <h2>Teacher Vibes: Claude for Teachers</h2>
+      <p>AI that does the boring parts of planning, so you can teach. In 90 minutes you'll set up a free AI assistant, build a real lesson plan with it, and leave with one trick you'll use Monday morning.</p>
+      <ul class="ticks"><li>Live on Google Meet, 90 minutes</li><li>No tech skills needed. If you can type, you can do this</li><li>Optional <strong>$19 VIP upgrade</strong>: full replay plus a 30-minute live Q&amp;A</li></ul>
+      <div class="btn-row"><a class="btn btn-sun" href="#contact" data-go="contact">Save my seat for the next one</a></div>
+      <p class="note">Next date announced soon. Join the list and you'll hear first.</p>
+    </div>
+  </div></section>
+
+  <section class="band alt" id="products"><div class="wrap stack">
+    <h2>Products</h2>
+    <p>Teacher Vibes products: <a href="https://kelpietide7.gumroad.com" target="_blank" rel="noopener">https://kelpietide7.gumroad.com</a></p>
+  </div></section>
+</div>
+
+<!-- ============ NEWS ============ -->
+<div class="page" id="p-news" hidden>
+  <div class="hero sub-hero"><div class="bubbles" aria-hidden="true"></div><div class="wrap"><div class="copy">
+    <span class="depth">AI News · Kelpie Currents</span>
+    <h1>Kelpie Currents</h1>
+    <p class="lede">Plain-English AI news for busy people. What happened, what it means for you, and one thing to try this week.</p>
+  </div></div></div>
+
+  <section class="band"><div class="wrap">
+    <h2>Coming soon</h2>
+  </div></section>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div class="page" id="p-about" hidden>
+  <div class="hero sub-hero"><div class="bubbles" aria-hidden="true"></div><div class="wrap"><div class="copy">
+    <span class="depth">About</span>
+    <h1>Hi, I'm Michelle, your friendly AI navigator</h1>
+  </div></div></div>
+
+  <section class="band"><div class="wrap about">
+    <!-- NOTE: Michelle's photo still needs to be added here (4:5 portrait). The emblem holds the spot until then. -->
+    <div class="portrait"><img src="kelpie-emblem-512.png" alt="Kelpie Group emblem" width="240" height="240" style="width:80%;height:auto"></div>
+    <div class="prose">
+      <p>I'm a retired special education and technology teacher who now helps small businesses and everyday learners put AI to work. For years my job was taking something that felt complicated and making it click. That's still my job. The subject just changed.</p>
+      <p>I've watched plenty of "next big things" come and go. Kelpie Group isn't about hype. It's about practical tools that fit your voice, your workflow, and your life, explained in words you already use.</p>
+      <p>I'm a lifelong learner, and I build with the same tools I teach. If I recommend something, it's because I use it and I can show you how.</p>
+      <div class="btn-row"><a class="btn btn-sun" href="#contact" data-go="contact">Send me a message</a></div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="page" id="p-contact" hidden>
+  <div class="hero sub-hero"><div class="bubbles" aria-hidden="true"></div><div class="wrap"><div class="copy">
+    <span class="depth">Contact</span>
+    <h1>Let's start with what you need</h1>
+    <p class="lede">Tell me a little about your goal or your tech headache. You'll hear back within one to two business days.</p>
+  </div></div></div>
+
+  <section class="band"><div class="wrap contact">
+    <div class="card">
+      <h3>Send Michelle a message</h3>
+      <p>Email a sentence or two about your goal or your tech headache.</p>
+      <div class="btn-row"><a class="btn btn-sun" href="mailto:michelle@kelpiegroup.net">Email michelle@kelpiegroup.net</a></div>
+    </div>
+    <div class="card">
+      <dl>
+        <div><dt>Email</dt><dd>michelle@kelpiegroup.net</dd></div>
+        <div><dt>Where</dt><dd>Online, by video call. Serving Hinesville, Ludowici, Richmond Hill, Jesup, and Savannah — and clients welcome from anywhere.</dd></div>
+      </dl>
+    </div>
+  </div></section>
+</div>
+</main>
+
+<footer><div class="wrap">
+  <span class="foot-brand"><img src="kelpie-emblem-160.webp" alt="" width="40" height="40">© 2026 Kelpie Group · kelpiegroup.net</span>
+  <span>Practical AI help. No tech skills required.</span>
+</div></footer>
+
+<script>
+(function(){
+  var pages=["home","services","learn","news","about","contact"];
+  var nav=document.getElementById("mainNav"),btn=document.getElementById("menuBtn");
+  function show(id,scroll){
+    if(pages.indexOf(id)<0) id="home";
+    pages.forEach(function(p){document.getElementById("p-"+p).hidden=(p!==id)});
+    document.querySelectorAll("nav a").forEach(function(a){
+      if(a.dataset.go===id) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+    });
+    nav.classList.remove("open");btn.setAttribute("aria-expanded","false");
+    if(scroll) window.scrollTo(0,0);
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest("[data-go]"); if(!a) return;
+    e.preventDefault(); show(a.dataset.go,true);
+    try{history.replaceState(null,"","#"+a.dataset.go)}catch(_){}
+  });
+  btn.addEventListener("click",function(){var o=nav.classList.toggle("open");btn.setAttribute("aria-expanded",o)});
+  // bubbles
+  if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
+    document.querySelectorAll(".bubbles").forEach(function(b){
+      for(var i=0;i<14;i++){var s=document.createElement("span"),d=4+Math.random()*14;
+        s.style.cssText="left:"+(Math.random()*100)+"%;width:"+d+"px;height:"+d+"px;animation-duration:"+(9+Math.random()*12)+"s;animation-delay:-"+(Math.random()*18)+"s;--dx:"+(Math.random()*40-20)+"px";
+        b.appendChild(s);}
+    });
+  }
+  show((location.hash||"#home").slice(1),false);
+})();
+</script>
+
+</body>
+</html>
