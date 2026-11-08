@@ -17,6 +17,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="kelpie-favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="kelpie-favicon-192.png">
 <link rel="apple-touch-icon" href="kelpie-favicon-180.png">
+<!-- Preload the hero image (LCP element) — added Nov 8, 2026, after the Lighthouse baseline (Performance 81, LCP 5.2s). Hero image also optimized 198 KB → 79 KB (1000px). -->
+<link rel="preload" as="image" href="kelpie-hero.webp" fetchpriority="high">
 <!-- JSON-LD schema — added Nov 8, 2026 (Q&A + schema cleanup). Facts match the page text. Telephone cut (no phone on the page — her tap). Certifications cut from the founder description (no issuers on file — add back when issuers are confirmed). "AI Advisor" job title cut (not in the profile sheet — her call). Service areas are the draft list from the punch list (her call to confirm/cut/add). -->
 <script type="application/ld+json">
 {
@@ -263,7 +265,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 <!-- ============ HOME ============ -->
 <div class="page" id="p-home">
   <div class="hero hero-photo">
-    <img class="hero-img" src="kelpie-hero.webp" alt="A glowing cyber kelpie, a water horse traced with lines of light, rising from dark water" width="1536" height="1024">
+    <img class="hero-img" src="kelpie-hero.webp" alt="A glowing cyber kelpie, a water horse traced with lines of light, rising from dark water" width="1000" height="667" fetchpriority="high">
     <div class="bubbles" aria-hidden="true"></div>
     <div class="wrap">
       <div class="copy">
