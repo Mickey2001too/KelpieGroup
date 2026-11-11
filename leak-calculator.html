@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Booking Leak Calculator</title>
+<style>
+  body{font-family:Georgia,serif;max-width:720px;margin:0 auto;padding:24px;color:#222;line-height:1.55}
+  h1{font-size:28px;margin-bottom:4px} h2{font-size:20px;margin-top:32px}
+  .sub{color:#555;margin-bottom:24px}
+  .q{border:1px solid #ddd;border-radius:8px;padding:16px;margin:14px 0}
+  .q p{font-weight:bold;margin:0 0 4px}
+  .q .help{color:#555;font-size:14px;margin:0 0 10px}
+  .q input{font-family:inherit;font-size:16px;padding:8px;width:180px;border:1px solid #bbb;border-radius:6px}
+  button{background:#2a7f6f;color:#fff;border:0;border-radius:6px;padding:12px 20px;font-size:16px;cursor:pointer;margin-top:12px}
+  button.secondary{background:#fff;color:#2a7f6f;border:1px solid #2a7f6f}
+  #result{display:none;border:2px solid #2a7f6f;border-radius:8px;padding:20px;margin-top:24px}
+  .headline{font-size:22px;margin:8px 0}
+  .leak{font-size:18px;margin:8px 0}
+  .plan{background:#f6f6f6;border-radius:6px;padding:14px;white-space:pre-wrap}
+  .note{font-size:13px;color:#555;margin-top:24px}
+  .msg{width:100%;min-height:130px;font-family:inherit;font-size:15px;padding:10px}
+  @media print{button{display:none}}
+</style>
+</head>
+<body>
+<h1>Booking Leak Calculator</h1>
+<p class="sub">A free tool from Michelle for independent salon and day spa owners with one to six chairs or rooms and no full-time receptionist. Enter your own numbers from one week's tally (a notebook by the phone is enough). The calculator counts where bookings slipped away, ranks your three leaks, and writes a first plan for your biggest one. Your answers never leave this device.</p>
+
+<div class="q">
+  <p>1. What is one booked appointment worth on average?</p>
+  <p class="help">Your average service price, in dollars. Use your own average — no industry figure is assumed here.</p>
+  <input id="fPrice" type="number" min="0" step="any" inputmode="decimal" placeholder="Dollars">
+</div>
+
+<div class="q">
+  <p>2. How many calls went to voicemail or unanswered last week?</p>
+  <p class="help">From your phone log: every call you could not pick up while you were with a client.</p>
+  <input id="fUnanswered" type="number" min="0" step="1" inputmode="numeric" placeholder="Calls">
+</div>
+
+<div class="q">
+  <p>3. Of those unanswered calls, how many did you win back and book?</p>
+  <p class="help">Callers who came back and booked after all. The rest are your missed-call leak.</p>
+  <input id="fWonback" type="number" min="0" step="1" inputmode="numeric" placeholder="Calls">
+</div>
+
+<div class="q">
+  <p>4. How many no-shows or late cancellations left a chair empty last week?</p>
+  <p class="help">Appointments that sat empty because the client did not show or cancelled too late to refill.</p>
+  <input id="fNoshows" type="number" min="0" step="1" inputmode="numeric" placeholder="Appointments">
+</div>
+
+<div class="q">
+  <p>5. How many clients left last week without a next appointment booked?</p>
+  <p class="help">The rebooking question, asked before the client leaves. Everyone who left without a next booking counts here.</p>
+  <input id="fNotRebooked" type="number" min="0" step="1" inputmode="numeric" placeholder="Clients">
+</div>
+
+<button id="calcBtn" onclick="calc()">See my leak</button>
+<button class="secondary" onclick="location.reload()">Start over</button>
+
+<div id="result">
+  <h2>Your number</h2>
+  <p class="headline" id="totalLine"></p>
+  <p id="monthLine"></p>
+  <h2>Your three leaks, ranked</h2>
+  <div id="ranking"></div>
+  <p class="note">Missed calls and no-shows are bookings lost this week. Clients who left without rebooking are future bookings not yet secured — counted separately below the total, never added to this week's lost revenue.</p>
+  <h2>Your biggest leak: <span id="topName"></span></h2>
+  <p>Your first plan:</p>
+  <div class="plan" id="planText"></div>
+  <p><button class="secondary" onclick="copyText('planText')">Copy plan</button></p>
+  <h2>Your summary, ready to keep</h2>
+  <textarea class="msg" id="summaryText" readonly></textarea>
+  <p><button class="secondary" onclick="copyField('summaryText')">Copy summary</button>
+  <button class="secondary" onclick="window.print()">Print</button></p>
+  <p class="note">Next step: want help fixing it? Book your free 30-minute Workflow Audit: <a href="https://calendar.app.google/PJZyF1Ht2vgJFSdE9">calendar.app.google/PJZyF1Ht2vgJFSdE9</a></p>
+  <p class="note">Run this again next Monday, same time, fifteen minutes: count the leak, count the recovered, count the gaps, pick one fix.</p>
+</div>
+
+<p class="note">Privacy: this tool runs entirely in your browser. Nothing you enter is sent anywhere or stored. All figures are computed from the numbers you entered — they are your own tally, not a promise of what you will recover.</p>
+
+<script>
+const PLANS = {
+  missed: "1. Keep the one-week tally going: every call in, and whether it became a booking.\n2. Sort last week's lost calls into the three paths: new, returning, win-back. The biggest pile is your first fix.\n3. Write one two-sentence message for each path, in your own words, and read them out loud until they sound like you.\n4. Hand off one repetitive step this week: same-day callbacks from a list, or a confirmation message after every booking.\n5. Re-count next Monday: unanswered calls, won back, still lost.",
+  noshow: "1. List every no-show and late cancellation from last week, with the empty chair time.\n2. Add one confirmation step before each visit and one reminder the day before — same words, every client.\n3. Keep a backfill list: clients who asked for a sooner opening, in the order they asked.\n4. When a chair opens, work the backfill list before it sits empty.\n5. Re-count next Monday: no-shows, chairs refilled from the backfill list, chairs still empty.",
+  rebook: "1. Pick one sentence you will ask every client before she leaves, for example: \u201CBefore you go, let's get your next one booked \u2014 same time in three weeks?\u201D\n2. Practice it until it feels natural, then ask every client this week.\n3. If she cannot book, ask what would work. If she still cannot, ask permission to remind her.\n4. Count how many rebooked on the spot each day. That count is next week's head start.\n5. Re-count next Monday: clients who left with a next booking, clients who left without one."
+};
+function readNum(id, label){
+  const el = document.getElementById(id);
+  const v = el.value.trim();
+  if(v === ""){ alert("Please enter " + label + " first."); return null; }
+  const n = Number(v);
+  if(!isFinite(n) || n < 0){ alert(label + " must be a number of 0 or more."); return null; }
+  return n;
+}
+function money(n){ return "$" + Math.round(n).toLocaleString("en-US"); }
+function calc(){
+  const price = readNum("fPrice", "your average service price");
+  if(price === null) return;
+  const unanswered = readNum("fUnanswered", "your unanswered calls last week");
+  if(unanswered === null) return;
+  const wonback = readNum("fWonback", "how many unanswered calls you won back");
+  if(wonback === null) return;
+  const noshows = readNum("fNoshows", "your no-shows last week");
+  if(noshows === null) return;
+  const notrebooked = readNum("fNotRebooked", "how many clients left without rebooking");
+  if(notrebooked === null) return;
+  if(wonback > unanswered){ alert("Won back cannot be more than unanswered calls."); return; }
+
+  const lostCalls = unanswered - wonback;
+  const missedVal = lostCalls * price;
+  const noshowVal = noshows * price;
+  const rebookVal = notrebooked * price;
+  const lostWeek = missedVal + noshowVal;
+  const bookingsLost = lostCalls + noshows;
+
+  document.getElementById("totalLine").textContent =
+    "Based on the numbers you entered, you lost about " + money(lostWeek) +
+    " in bookings this week (" + bookingsLost + " booking" + (bookingsLost === 1 ? "" : "s") + ").";
+  document.getElementById("monthLine").textContent =
+    "At the same weekly rate, that is about " + money(lostWeek * 4.33) +
+    " over a 4.33-week month — your own tally, not a forecast.";
+
+  const leaks = [
+    {key:"missed", name:"Missed calls", count:lostCalls, unit:"calls lost", val:missedVal,
+     line:"Missed calls — " + lostCalls + " call" + (lostCalls === 1 ? "" : "s") + " lost, " + money(missedVal) + " this week"},
+    {key:"noshow", name:"No-shows", count:noshows, unit:"empty chairs", val:noshowVal,
+     line:"No-shows — " + noshows + " empty chair" + (noshows === 1 ? "" : "s") + ", " + money(noshowVal) + " this week"},
+    {key:"rebook", name:"Left without rebooking", count:notrebooked, unit:"future bookings at stake", val:rebookVal,
+     line:"Left without rebooking — " + notrebooked + " client" + (notrebooked === 1 ? "" : "s") + ", " + money(rebookVal) + " in future bookings at stake"}
+  ].sort((a,b) => b.val - a.val);
+  document.getElementById("ranking").innerHTML = leaks.map((r,i) =>
+    '<div class="leak">' + (i+1) + ". " + r.line + "</div>"
+  ).join("");
+
+  const top = leaks[0];
+  document.getElementById("topName").textContent = top.name;
+  document.getElementById("planText").textContent = PLANS[top.key];
+  document.getElementById("summaryText").value =
+    "My booking leak (one week's tally):\n" +
+    "- Bookings lost this week: " + bookingsLost + " (" + money(lostWeek) + ")\n" +
+    "- Missed calls: " + lostCalls + " (" + money(missedVal) + ")\n" +
+    "- No-shows: " + noshows + " (" + money(noshowVal) + ")\n" +
+    "- Left without rebooking: " + notrebooked + " (" + money(rebookVal) + " in future bookings at stake)\n" +
+    "- Biggest leak: " + top.name + "\n" +
+    "- Next step: free 30-minute Workflow Audit — https://calendar.app.google/PJZyF1Ht2vgJFSdE9";
+  document.getElementById("result").style.display = "block";
+  document.getElementById("result").scrollIntoView();
+}
+function copyText(id){
+  const t = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(t);
+}
+function copyField(id){
+  const el = document.getElementById(id);
+  el.select();
+  document.execCommand("copy");
+}
+</script>
+</body>
+</html>
