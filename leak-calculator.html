@@ -13,22 +13,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Booking Leak Calculator</title>
 <style>
-  body{font-family:Georgia,serif;max-width:720px;margin:0 auto;padding:24px;color:#222;line-height:1.55}
-  h1{font-size:28px;margin-bottom:4px} h2{font-size:20px;margin-top:32px}
-  .sub{color:#555;margin-bottom:24px}
-  .q{border:1px solid #ddd;border-radius:8px;padding:16px;margin:14px 0}
+  body{font-family:Georgia,serif;max-width:720px;margin:0 auto;padding:24px;background:#0B1E28;color:#F3EDDF;font-size:18px;line-height:1.55}
+  h1{font-size:30px;margin-bottom:4px} h2{font-size:22px;margin-top:32px}
+  .sub{color:#C9D4CE;margin-bottom:24px}
+  .q{background:#122E3D;border:1px solid #2a7f6f;border-radius:8px;padding:16px;margin:14px 0}
   .q p{font-weight:bold;margin:0 0 4px}
-  .q .help{color:#555;font-size:14px;margin:0 0 10px}
-  .q input{font-family:inherit;font-size:16px;padding:8px;width:180px;border:1px solid #bbb;border-radius:6px}
-  button{background:#2a7f6f;color:#fff;border:0;border-radius:6px;padding:12px 20px;font-size:16px;cursor:pointer;margin-top:12px}
-  button.secondary{background:#fff;color:#2a7f6f;border:1px solid #2a7f6f}
-  #result{display:none;border:2px solid #2a7f6f;border-radius:8px;padding:20px;margin-top:24px}
-  .headline{font-size:22px;margin:8px 0}
-  .leak{font-size:18px;margin:8px 0}
-  .plan{background:#f6f6f6;border-radius:6px;padding:14px;white-space:pre-wrap}
-  .note{font-size:13px;color:#555;margin-top:24px}
-  .msg{width:100%;min-height:130px;font-family:inherit;font-size:15px;padding:10px}
-  @media print{button{display:none}}
+  .q .help{color:#B9C8C0;font-size:16px;margin:0 0 10px}
+  .q input{font-family:inherit;font-size:18px;padding:8px;width:180px;background:#0E2836;border:1px solid #3E6B7E;border-radius:6px;color:#F3EDDF}
+  .money{display:flex;align-items:center;gap:8px}
+  .cur{font-size:22px;font-weight:bold;color:#C9A86A}
+  button{background:#2a7f6f;color:#fff;border:0;border-radius:6px;padding:12px 20px;font-size:18px;cursor:pointer;margin-top:12px}
+  button.secondary{background:transparent;color:#7FC8B7;border:1px solid #2a7f6f}
+  #result{display:none;border:2px solid #C9A86A;border-radius:8px;padding:20px;margin-top:24px}
+  .headline{font-size:24px;margin:8px 0}
+  .leak{font-size:19px;margin:8px 0}
+  .plan{background:#0E2836;border-radius:6px;padding:14px;white-space:pre-wrap}
+  .note{font-size:15px;color:#B9C8C0;margin-top:24px}
+  .msg{width:100%;min-height:130px;font-family:inherit;font-size:16px;padding:10px;background:#0E2836;color:#F3EDDF;border:1px solid #3E6B7E;border-radius:6px}
+  a{color:#7FC8B7}
+  @media print{button{display:none}body{background:#fff;color:#000}.q,#result{background:#fff;border-color:#999}.q input,.plan,.msg{background:#fff;color:#000;border-color:#999}.sub,.q .help,.note{color:#333}}
 </style>
 </head>
 <body>
@@ -38,7 +41,7 @@
 <div class="q">
   <p>1. What is one booked appointment worth on average?</p>
   <p class="help">Your average service price, in dollars. Use your own average — no industry figure is assumed here.</p>
-  <input id="fPrice" type="number" min="0" step="any" inputmode="decimal" placeholder="Dollars">
+  <div class="money"><span class="cur">$</span><input id="fPrice" type="number" min="0" step="any" inputmode="decimal" placeholder="0.00"></div>
 </div>
 
 <div class="q">
